@@ -4,410 +4,83 @@
     <title>
        Customer Dashboard
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
+     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="MiniProject.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            background-color: #f3f9ff;
-            font-family:  'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        .heading{
-            width: 100%;
-            height: 80px;
-            position: relative;
-            background-image:linear-gradient(90deg,#4d5eff,#7582f3);
-            display: inline-block;
-            text-align: center;
-        }
-        .h1_tag{
-            position: relative;
-            color: white;
-            top: 10px;
-            
-        }
-        .container1{
-            position: relative;
-            width: 100%;
-            height: auto;
-            margin-top: 1% ;
-        }
-        .orders , .amount , .customers{
-            background-color: #d8f0ff;
-            color: dimgray;
-            box-sizing: border-box;
-            text-align: center;
-            width: 25%;
-            height: 12vh;
-            position: relative;
-            display: inline-block;
-            border-radius: 6px;
-
-        }
-        .orders h3 , .amount h3 , .customers h3{
-            font-weight: 100;
-            
-        }
-        .amount , .orders{
-            margin-right: 9%;
-        }
-        .orders{
-            margin-left: 3.5%;
-        }
-        .mid_sec{
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            height:80px ;
-        }
-        .mid_sec .heading2 {
-           position: relative;
-           width: 30vw;
-           height: 100%;
-           float: left;
-           left: 3.5%;
-        }
-        .mid_sec .heading2 h2{
-            position: relative;
-            top: 30%;
-            color: dimgray;
-        }
-        .mid_sec .form{
-            float: right;
-            right: 3.5%;
-            position: relative;
-            height: 100%;
-            
-        }
-        .mid_sec .form input{
-            position: relative;
-            margin-top: 16%;
-            font-size: 15px;
-            border: 1px solid #4d5eff;;
-            border-radius: 7px;
-            padding: 2px;
-        }
-        .table1 table  {
-            border-collapse: collapse;
-            margin-left: 3.5%;
-            width: 93%;
-            
-        }
-        .table1 table td ,.table2 table td,.table3 table td{
-            border-radius: 4px ;
-            padding: 4px;
-        }
-        .table1 table td ,.table2 table td{
-            color: dimgray;
-        }
-        .table1 table th ,.table2 table th  {
-            background-color: #4d5eff;
-            color: white;
-            padding: 4px;
-        }
-        .table1 table tr:nth-of-type(even) ,.table2 table tr:nth-of-type(even){
-            background-color: #d8f0ff;
-        }
-
-        .table1{
-            position: relative;
-            max-height: 400px ;
-            overflow: scroll;
-        }
-        .anchor{
-            color:  #4d5eff;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .heading3{
-            position: relative;
-            width: 100%;
-            height:80px ;
-        }
-        .heading3 h2{
-            position: relative;
-            margin-left: 3.5%;
-            top: 30%;
-            color: dimgray;
-        }
-        .bottom{
-            position: relative;
-            width: 100vw;
-            display: inline-block;
-        }
-        .table2{
-            float: left;
-            left: 3.5%;
-            position: relative;
-            width: 46vw;
-            min-width: 470px;
-            display: block;
-        }
-        .table2 table{
-            position: relative;
-            text-align: center;
-            width: 100%;
-            border-collapse: collapse;
-        }       
-        .pie_chart{
-            left: 14%;
-            width:470px ;
-            position: relative;
-            float: left ;
-            }
-           .char_wrapper{
-            position: relative;
-            width: 470px;
-            height: 470px;
-            margin: 0 auto;
-             }
-        @media screen and  (max-width:550px){
-            .pie_chart{
-                left: 15px;
-            }
-            .table2{
-                left: 15px;
-            }
-        }
-       
-        .showTable{
-            background-color: rgba(0, 0, 0, 0.644) ;
-            position: fixed;
-            width: 100%;
-            height: 100vh;  
-            top: 0;       
-            left: 0;   
-            z-index: 1;
-
-        }
-        .showTable_inner{
-            position: relative;
-            width: 100%;
-            height: 100vh;
-        }
-        .caption{
-           position: relative;
-           display: inline-block;
-           background-color: #000220ee;
-           width: 40%;
-           min-width: 207px;
-           top: 23%;
-           left:30% ;
-       }
-       .h3_caption{
-           position: relative;
-           display: inline-block;
-           top: 0;
-           margin-left: 2%;           
-       }
-       .caption h3{
-           position: relative;
-           color: white;
-           top: 5px;
-       }
-       .btn_close{
-           position: relative;
-           float: right;
-           top: 0;
-           right: 10px;
-           height: 49px;
-       }
-       .btn_close i {
-            position: relative;
-            color:  white;
-            top: 15%;
-            cursor:pointer;
-        }
-
-        .table3{
-            position: relative;
-            top: 23%;
-            width: 100%;
-            max-height: 400px;
-            overflow: scroll;
-        }
-        .table3 table{
-            position: relative;
-            border: 1px solid black;
-            border-collapse: collapse;
-            width: 40%;
-            left: 30%;
-            text-align: center;
-            
-        }
-        .table3 table th ,.table3 table td{
-            color:#000220ee ;
-            border: 1px solid black;
-        }
-        .table3 table th{
-           background-color: #343d52;
-           color: white;
-        }
-       .table3 table td{
-           background-color: #858b97;
-       }
-       #error_body{
-           text-align: center;
-       }
-      
-       
-        
-    </style>
+    <meta name="viewport" content="width=device-width , initial-scale=1.0">
  </head>
 <body>
-    <div id="root">
-        
-    </div>
+    <div id="root"></div>
     <script crossorigin src="http://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="http://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script crossorigin src="http://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/02d1bd4b4f.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" 
+            integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" 
+            crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="./customer-data.js"></script>
     <script type="text/babel">
         const roothandle=document.getElementById('root')
         const{useState,useEffect}= React
-        
-        function CustomerDashboard(props){
-            const[input,setInput] = useState('')
-            const[customers,setCustomers]=useState([])
-            const[TotalAmount,setTamount]=useState(0)
-            const[customerCount,setCustomerCount]=useState([])
-            const[orderOnce,setOrderOnce]=useState(0)
-            const[orderTwice,setOrderTwice]=useState(0)
-            const[orderThrice,setOrderThrice]=useState(0)
-            const[orderFour,setOrderFour]=useState(0)
-            const[orderMore,setOrderMore]=useState(0)
-            const[showDetail,setShowDetail]=useState([])
-            const[amountPer , setAmountPer]=useState(0)
-            const[Search,setSearch]=useState([])
+        //Customer-Stats
+        function OrdersAmountCustomer(props){
+             const {customers ,calcAmount, calcCustomer}=props
+            return(
+                    <div className={'container1'}>
+                        <Orders customers={customers}/>
+                        <Amount calcAmount={calcAmount(customers)}/>
+                        <Customers calcCustomer={calcCustomer()}/>
+                    </div>
+            )
+        }
+        function Orders(props){
+            const{customers}=props
+            return(
+                <div className={'orders'}>
+                    <h1>{customers.length}</h1>
+                    <h3>Orders</h3>
+                </div>
+            )
+        }
+        function Amount(props){
+            const{calcAmount}=props
+            return(
+                <div className={'amount'}>
+                      <h1>{calcAmount}</h1>
+                      <h3>Amount</h3>
+                </div>
+            )
+        }
+        function Customers(props){
+            const{calcCustomer}=props
+            return(
+                <div className={'customers'}>
+                      <h1>{calcCustomer.length}</h1>
+                      <h3>Customers</h3>
+                </div>
+            )
+        }
+       //------------------->
+       //Customer-Table
+        function CustomerTable(props){
+            const{calcCustomer,customers,calcAmount}=props
+            const[input,setInput]=useState('')
+            const[modal,setModal]=useState([])
             const[flag,setFlag]=useState(false)
-            
-           
-            useEffect(()=>{
-              setCustomers(JSON_Data)
-              calcAmount()
-              calcCustomer() 
-                     
-            },[])
-            function calcAmount(){
-                let amount = 0
-                JSON_Data.forEach((customer)=>{
-                    amount = customer.Amount + amount
-                })
-                setTamount(amount)
-            }
-            function calcCustomer(){
-                const tempData = [...JSON_Data]
-                //loop-------------
-                const totalCustomer = []
-                tempData.forEach((customer)=>{                   
-                     //loop--------
-                  const result =  totalCustomer.filter((cust)=>{
-                        return customer.Phone === cust.Phone
-                    })
-                    if(result.length<1){
-                        totalCustomer.push(customer)
-                    }
-                     //-------------
-                   
-                })
-                //-------------------
-                const CustomerDetails = {}
-                totalCustomer.forEach((customer)=>{
-                    const data = tempData.filter ((ele)=>{
-                        return ele.Phone === customer.Phone
-                    })
-                    CustomerDetails[customer.Phone]= data
-                })
-                setCustomerCount(totalCustomer) 
-                let once =0 , twice =0 ,thrice =0 ,four =0 , more = 0 
-                 for(const key in CustomerDetails){
-                     if(CustomerDetails[key].length === 1){
-                         once++
-                     } else  if(CustomerDetails[key].length === 2){
-                         twice++
-                     } else  if(CustomerDetails[key].length === 3){
-                         thrice++
-                     } else  if(CustomerDetails[key].length === 4){
-                         four++
-                     } else  if(CustomerDetails[key].length >=5){
-                         more++
-                     }
-                 }
-                 setOrderOnce(once)
-                 setOrderTwice(twice)
-                 setOrderThrice(thrice)
-                 setOrderFour(four)
-                 setOrderMore(more)
-                 var ctx = document.getElementById('myChart').getContext('2d');
-                    var myChart = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                    labels: ['1 Order','2 Order','3 Order','4 Order','+5 Order'],
-                    datasets: [{
-                        data: [once,twice,thrice, four, more],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                        ],
-                    }]
-                    },
-                    options: {
-                    responsive: true,
-                    legend:{
-                        position:'bottom',
-                    },
-                    plugins:{
-                        datalabels:{
-                            color:'black',
-                            anchor:'end',
-                            borderWidth:2,
-                            borderColor: 'white',
-                            borderRadius: 25,
-                            backgroundColor:(context)=>{
-                                return context.dataset.backgroundColor
-                            },
-                            formatter:(value)=>{
-                                return value +" Customers";
-                            }
-                            
-                            
-                        }
-                    }
-                    }
-                    });    
-                }
-            function showdetails(name,phone){
-                let amount = 0
-                const result = customers.filter((customer)=>{
-                    return customer.Name === name && customer.Phone === phone
-                })
-                result.forEach((customer)=>{
-                    amount = customer.Amount + amount
-                })
-                setShowDetail(result)
-                setAmountPer(amount)
-                setFlag(true)
-            }
             function handleSearch(e){
-                   const userInput = e.target.value
-                   if(userInput.length>0){
-                   let searchResult=[...customerCount]
-                   console.log(Number(userInput));
-                   if(isNaN(Number(userInput))){
-                    for( let i = 0 ; i<userInput.length;i++){
+                 setInput(e.target.value)      
+            }
+            function Search(){
+                const userInput_result = input.trim()
+                   if(userInput_result.length>0){
+                   let searchResult=[...calcCustomer()]
+                   if(isNaN(Number(userInput_result))){
+                    for( let i = 0 ; i<userInput_result.length;i++){
                        const result = searchResult.filter((ele)=>{
-                           return userInput[i].toLowerCase()== ele.Name.charAt(i).toLowerCase()
+                           return userInput_result[i].toLowerCase()== ele.Name.charAt(i).toLowerCase()
                        })
                        if(result.length>0){
                           searchResult = result
@@ -416,65 +89,55 @@
                        }
                     }
                    }else{
-                    for( let i = 0 ; i<userInput.length;i++){
+                    for( let i = 0 ; i<userInput_result.length;i++){
                        const result = searchResult.filter((ele)=>{
-
-                           return userInput[i]== String(ele.Phone)[i]
+                           return userInput_result[i]== String(ele.Phone)[i]
                        })
                        if(result.length>0){
                           searchResult = result
                        }else{
                            searchResult = [] 
-                       }
-                    }
-                   }
-                   
-                   console.log(searchResult);
-                   setSearch(searchResult)
+                       }}}
+                   return(searchResult)
                 } else {
-                    setSearch([])
-                    
+                    return([])
                 }
-                setInput(userInput)
-                   
             }
-           function closeWindow(){
+            function showdetails(phone){
+                const result = customers.filter((customer)=>{
+                    return  customer.Phone === phone
+                })
+                setModal(result)
+                setFlag(true)
+            }
+            function closeWindow(){
                setFlag(false)
-           }
-           function handleSub(e){
-               e.preventDefault()
-           }
-          
-           return (
+           }    
+            return(
                 <div>
-                    <div className={'heading'}>
-                     <h1 className={'h1_tag'}>Customer Dashboard</h1>
+                    <SearchBar  input={input}  handleSearch={handleSearch}/>
+                    <Table Search={Search()} input={input} calcCustomer={calcCustomer} showdetails={showdetails}/>
+                    <CustomerModal  closeWindow={closeWindow} calcAmount={calcAmount} flag={flag} modal={modal}/>
+                </div>
+            )
+        }
+        function SearchBar(props){
+            const{handleSearch,input}=props
+            return(
+                <div className={'mid_sec'}>
+                    <div className={'heading2'}>
+                        <h2>Listing Customers</h2>
                     </div>
-                    <div className={'container1'}>
-                        <div className={'orders'}>
-                          <h1>{customers.length}</h1>
-                          <h3>Orders</h3>
-                        </div>
-                        <div className={'amount'}>
-                          <h1>{TotalAmount}</h1>
-                          <h3>Amount</h3>
-                        </div>
-                        <div className={'customers'}>
-                          <h1>{customerCount.length}</h1>
-                          <h3>Customers</h3>
-                        </div>
+                    <div className={'form'}>
+                        <input type="text" placeholder={'Name or Phone no.'} value={input} onChange={handleSearch}/>
                     </div>
-
-                    <div className={'mid_sec'}>
-                        <div className={'heading2'}>
-                            <h2>Listing Customers</h2>
-                        </div>
-                        <div className={'form'}>
-                            <input type="text" placeholder={'Search'} value={input} onChange={handleSearch}/>
-                        </div>
-                    </div>
-                    
-                    <div className={'table1'}>
+                </div>
+            )
+        }
+        function Table(props){
+            const{Search,input,calcCustomer,showdetails}=props
+            return(
+                <div className={'table1'}>
                        <table>
                            <thead>
                              <tr>
@@ -484,13 +147,13 @@
                               <th>Details</th>   
                              </tr>
                             </thead>
-                            {!input ?  <tbody>
-                                {customerCount.map((customer,i)=>{
+                            {!input.trim() ?  <tbody>
+                                {calcCustomer().map((customer,i)=>{
                                     return <tr key ={i}>
                                             <td>{i + 1}</td>
                                             <td>{customer.Name}</td>
                                             <td>{customer.Phone}</td>
-                                            <td><a className={'anchor'} onClick={()=>{showdetails(customer.Name,customer.Phone)}}>show</a></td>
+                                            <td><a className={'anchor'} onClick={()=>{showdetails(customer.Phone)}}>show</a></td>
                                            </tr>
                                 })} 
                             </tbody> : Search.length ? <tbody>
@@ -499,65 +162,28 @@
                                             <td>{i + 1}</td>
                                             <td>{customer.Name}</td>
                                             <td>{customer.Phone}</td>
-                                            <td><a className={'anchor'}onClick={()=>{showdetails(customer.Name,customer.Phone)}}>show</a></td>
+                                            <td><a className={'anchor'}onClick={()=>{showdetails(customer.Phone)}}>show</a></td>
                                            </tr>
                                 })} 
                             </tbody> : <tbody id={'error_body'}>
-                                              <tr><td colSpan='4'>Record Not Found</td>
+                                              <tr>
+                                                <td colSpan='4'>Record Not Found</td>
                                                 </tr>
-                                              
                                       </tbody> }       
                              
                         </table>    
                     </div>
-                      <div className={'heading3'}>
-                        <h2>Order Distribution</h2>
-                      </div>
-                    <div className={'bottom'}>
-                    <div className={'table2'}>
-                        <table>
-                          <thead>
-                             <tr>
-                               <th>No of Orders</th>
-                               <th>Count of Customers</th>
-                             </tr>  
-                          </thead> 
-                          <tbody>
-                             <tr>
-                              <td>1</td>
-                              <td>{orderOnce}</td>   
-                             </tr>
-                             <tr>
-                              <td>2</td>
-                              <td>{orderTwice}</td>   
-                             </tr>
-                             <tr>
-                              <td>3</td>
-                              <td>{orderThrice}</td>   
-                             </tr> 
-                             <tr>
-                              <td>4</td>
-                              <td>{orderFour}</td>   
-                             </tr>
-                             <tr>
-                              <td>+5</td>
-                              <td>{orderMore}</td>   
-                             </tr> 
-                          </tbody>   
-                        </table>
-                    </div>
-                    <div className={'pie_chart'}>
-                        <div className="char_wrapper">
-                          <canvas id="myChart" width="400" height="380"></canvas>
-                        </div>
-                    </div>
-                </div>
-                
-               {flag &&  <div className={'showTable'}>
-                <div className={'showTable_inner'}>
+            )
+        }
+        function CustomerModal(props){
+            const{modal,flag,closeWindow,calcAmount}=props
+            return(
+                 <div>
+                {flag &&  <div className={'showTable'}>
+                 <div className={'showTable_inner'}>
                     <div className={'caption'}>
                         <div className='btn_close'><i onClick={closeWindow} className={'fas fa-window-close'}></i></div>
-                        <div className='h3_caption'><h3>{showDetail[0].Name}'s Details</h3></div>
+                        <div className='h3_caption'><h3>{modal[0].Name}'s Details</h3></div>
                     </div>
                     
                     <div className={'table3'}>
@@ -570,7 +196,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        {showDetail.map((ele,i)=>{
+                        {modal.map((ele,i)=>{
                             return <tr key={i}>
                                     <td>{i+1}</td>
                                     <td>{ele.Date}</td>
@@ -578,27 +204,172 @@
                                    </tr>
                         })}   
                         <tr>
-                         <td><b>Orders - {showDetail.length}</b></td>
-                         <td><b>Total Amount</b></td>
-                         <td><b>{amountPer}</b></td>
+                         <td><b>Orders - {modal.length}</b></td>
+                         <td><b>Total Amount -</b></td>
+                         <td><b>{calcAmount(modal)}</b></td>
                         </tr> 
-                    
                         </tbody>
                         </table> 
                     </div>
-                </div>
+                  </div>
                 </div>}
+            </div>
+            )
+        }
+        //------------------->
+        //Order-Distribution
+        function OrderDistribution(props){
+            const{dist}=props
+            return(
+                <div>
+                    <div className={'heading3'}>
+                            <h2>Order Distribution</h2>
+                    </div>
+                    <div className={'bottom'}>
+                        <DistTable  dist={dist()}/>
+                        <PieChart dist={dist()}/>
+                    </div>
                 </div>
             )
         }
-
-        function App(props){
-            return <CustomerDashboard/>
+        function DistTable(props){
+            const{dist}=props
+            return(
+                <div className={'table2'}>
+                            <table>
+                                <thead>
+                                    <tr>
+                                    <th>No of Orders</th>
+                                    <th>Count of Customers</th>
+                                    </tr>  
+                                </thead> 
+                                <tbody>
+                                    <tr><td>1</td>
+                                    <td>{dist.once}</td></tr>
+                                    <tr><td>2</td>
+                                    <td>{dist.twice}</td></tr>
+                                    <tr><td>3</td>
+                                    <td>{dist.thrice}</td></tr> 
+                                    <tr><td>4</td>
+                                    <td>{dist.four}</td></tr>
+                                    <tr><td>+5</td>
+                                    <td>{dist.more}</td></tr> 
+                                </tbody>   
+                            </table>
+                        </div>
+            )
         }
-        ReactDOM.render(<App/>,roothandle)
-      
-       
-      
+        function PieChart(props){ 
+            const{dist}=props
+            useEffect(()=>{
+                piechart()
+            })
+            function piechart(){
+            var ctx = document.getElementById('myChart').getContext('2d')
+            var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+            labels: ['1 Order','2 Order','3 Order','4 Order','+5 Order'],
+            datasets: [{
+            data: [`${(dist.once*100/47).toFixed(2)}`,`${(dist.twice*100/47).toFixed(2)}`,
+            `${(dist.thrice*100/47).toFixed(2)}`,`${(dist.four*100/47).toFixed(2)}`,`${(dist.more*100/47).toFixed(2)}`],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)','rgba(54, 162, 235, 0.2)','rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)','rgba(153, 102, 255, 0.2)',
+                ],
+            }]
+            },
+            options: {
+            responsive: true,
+            legend:{
+                position:'bottom',
+            },
+            plugins:{
+                datalabels:{
+                    color:'black',
+                    anchor:'end',
+                    borderWidth:2,
+                    borderColor: 'white',
+                    borderRadius: 25,
+                    backgroundColor:(context)=>{
+                        return context.dataset.backgroundColor
+                    },
+                    formatter:(value)=>{
+                        return value +"% Customers";
+                    }                            
+                }
+             }
+            }
+            }); 
+            }
+            return(
+                <div className={'pie_chart'}>
+                            <div className="char_wrapper">
+                                <canvas id="myChart" width="410" height="360"></canvas>
+                            </div>
+                        </div>
+            )
+        }
+        //------------------->
+       //Customer-Dashboard
+        function CustomerDashboard(props){
+            const[customers,setCustomers]=useState([])
+
+            useEffect(()=>{
+              setCustomers(JSON_Data) 
+            },[])
+            function calcAmount(Customers){
+                let amount = 0
+                Customers.forEach((customer)=>{
+                    amount = customer.Amount + amount
+                })
+                return amount
+            }
+            function calcCustomer(){
+                const totalCustomer = []
+                 customers.forEach((customer)=>{                    
+                  const result =  totalCustomer.filter((cust)=>{
+                        return customer.Phone === cust.Phone
+                    })
+                    if(result.length<1){
+                        totalCustomer.push(customer)
+                    }
+                })
+                return totalCustomer
+            }
+            function distribution(){
+            let dist={once : 0 , twice : 0 ,thrice : 0 ,four : 0 , more : 0 }
+            calcCustomer().forEach((customer)=>{
+                    const data = customers.filter ((ele)=>{
+                        return ele.Phone === customer.Phone
+                    })
+                    if(data.length === 1){
+                        dist.once = dist.once + 1
+                     } else  if(data.length === 2){
+                        dist.twice = dist.twice + 1
+                     } else  if(data.length === 3){
+                        dist.thrice = dist.thrice + 1
+                     } else  if(data.length === 4){
+                        dist.four = dist.four + 1
+                     } else  if(data.length >=5){
+                        dist.more = dist.more + 1
+                     }
+                }) 
+               return dist
+            }
+           return (
+                <div>
+                    <div className={'heading'}>
+                     <h1 className={'h1_tag'}>Customer Dashboard</h1>
+                    </div>
+                    <OrdersAmountCustomer customers={customers} calcCustomer={calcCustomer} calcAmount={calcAmount}/>
+                    <CustomerTable calcCustomer={calcCustomer} customers={customers} calcAmount={calcAmount}/>
+                    <OrderDistribution  dist={distribution} />
+                </div>
+            )
+            }
+       //-------------------> 
+        ReactDOM.render(<CustomerDashboard/>,roothandle)
     </script>
     
 </body>
